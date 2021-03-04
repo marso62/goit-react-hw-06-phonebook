@@ -1,13 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import App from "./components/App/App";
 import { Provider } from "react-redux";
-
-import App from "./components/App.js";
-import store from "./redux/store";
+import globalState from "./redux/store";
+// import globalState from "./modules/store";
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <React.StrictMode>
+    <Provider store={globalState}>
+      <App />
+    </Provider>
+  </React.StrictMode>,
   document.getElementById("root")
 );
